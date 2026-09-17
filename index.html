@@ -192,21 +192,14 @@
     <div><div class="eyebrow">Meet your coach</div><h2>BUILT BY<br>ALFIE.</h2><p style="color:var(--muted);margin-top:22px">I believe good coaching should make you more confident, capable and consistent — not overwhelmed. Built by Alfie focuses on high-quality face-to-face training, performance and flexible online coaching.</p><a class="btn" href="#contact" style="margin-top:25px">Work With Me</a></div>
     <div class="testimonial"><p>“Your programme should fit your life — not force your life to fit your programme.”</p><small>— ALFIE, COACH</small></div>
   </div>
-
-<div class="about-instagram" style="margin-top:28px;padding:22px 24px;border:1px solid rgba(198,161,91,.28);border-radius:14px;background:rgba(255,255,255,.025);">
-  <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#c6a15b;margin-bottom:8px;">Follow the journey</div>
-  <p style="margin:0 0 14px;color:#d9d5cc;line-height:1.7;">Get a view of my lifestyle on Instagram, see training content, follow the work behind the sessions, and get a feel for what <strong>Built by Alfie</strong> is all about.</p>
-  <a href="https://www.instagram.com/builtby_alfie?stkn=Y25uZWlkdHV4ZGdt" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:9px;color:#f2eee6;text-decoration:none;font-weight:600;">
-    <i class="fa-brands fa-instagram" aria-hidden="true"></i> <a href="https://www.instagram.com/builtby_alfie?stkn=Y25uZWlkdHV4ZGdt" target="_blank" rel="noopener">@builtby_alfie</a>
-  </a>
-</div>
-
 </section>
 
 <section id="contact">
   <div class="container split">
     <div><div class="eyebrow">Ready to start?</div><h2>LET'S BUILD<br>SOMETHING.</h2><p style="color:var(--muted);margin-top:20px">Tell me a little about your goals and I’ll get back to you about the right coaching option.</p></div>
-    <form onsubmit="submitForm(event)">
+    <form action="https://formspree.io/f/mljdevzq" method="POST">
+<input type="hidden" name="_subject" value="New Built by Alfie website enquiry">
+
       <div class="fields"><input class="input" name="name" placeholder="Your name" required><input class="input" name="email" type="email" placeholder="Email address" required></div>
       <select class="input" name="service" required><option value="">What are you interested in?</option><option>Online coaching</option><option>In-person fitness coaching</option><option>Performance coaching</option><option>Not sure yet</option></select>
       <textarea class="input" name="message" placeholder="Tell me about your goal..." required></textarea>
@@ -229,48 +222,6 @@
 <footer><div class="container footer-inner"><div>© <span id="year"></span> Built by Alfie. All rights reserved.</div><div>1-to-1 Training • Performance • Online Coaching</div></div></footer>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.querySelector('form');
-  if (!form) return;
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const name = (data.get('name') || '').trim();
-    const email = (data.get('email') || '').trim();
-    const phone = (data.get('phone') || '').trim();
-    const service = (data.get('service') || 'General enquiry').trim();
-    const message = (data.get('message') || '').trim();
-    const method = data.get('contact_method') || 'whatsapp';
-
-    const enquiry = [
-      'Built by Alfie enquiry',
-      '',
-      'Name: ' + name,
-      'Email: ' + email,
-      phone ? 'Phone/WhatsApp: ' + phone : '',
-      'Service: ' + service,
-      '',
-      'Message:',
-      message
-    ].filter(Boolean).join('\n');
-
-    const whatsappUrl = 'https://wa.me/447522196025?text=' + encodeURIComponent(enquiry);
-    const emailUrl = 'mailto:built_by_alfie@proton.me?subject=' +
-      encodeURIComponent('Built by Alfie enquiry - ' + (name || 'Website enquiry')) +
-      '&body=' + encodeURIComponent(enquiry);
-
-    if (method === 'email') {
-      window.location.href = emailUrl;
-    } else if (method === 'both') {
-      window.open(whatsappUrl, '_blank', 'noopener');
-      setTimeout(function () { window.location.href = emailUrl; }, 350);
-    } else {
-      window.open(whatsappUrl, '_blank', 'noopener');
-    }
-  });
-});
-</script>
 </body>
 </html>

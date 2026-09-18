@@ -114,7 +114,87 @@
       .band .split { gap: 35px; }
     }
 
-  </style>
+    @media (max-width: 520px) {
+      .hero-card {
+        min-height: 470px;
+        padding: 20px;
+      }
+      .hero-card > div[style] {
+        top: 72px !important;
+        left: 20px !important;
+        right: 20px !important;
+        max-width: none !important;
+      }
+      .hero-card > div[style] > div {
+        font-size: 38px !important;
+      }
+      .statbox {
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 14px;
+      }
+      .statrow {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .stat strong {
+        font-size: 25px;
+      }
+      .stat small {
+        font-size: 10px;
+      }
+    }
+
+  
+
+@media(min-width:1101px){.plans{grid-template-columns:repeat(4,1fr)}.plan{padding:24px}.plan h3{font-size:31px}.price{font-size:46px}}
+@media(min-width:851px) and (max-width:1100px){.plans{grid-template-columns:repeat(2,1fr)}}
+/* Responsive navigation + mobile fixes */
+.menu{cursor:pointer;position:relative;z-index:30;width:46px;height:46px;display:none;align-items:center;justify-content:center;border:1px solid rgba(198,161,91,.35);border-radius:6px;background:#111;color:var(--text);font-size:25px;line-height:1}
+.mobile-menu{display:none;position:fixed;z-index:25;top:68px;left:12px;right:12px;background:rgba(13,13,13,.98);border:1px solid #302d29;border-radius:10px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.mobile-menu.open{display:grid}
+.mobile-menu a{padding:15px 14px;border-radius:6px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.mobile-menu a:hover{background:#181818;color:var(--accent)}
+.mobile-menu .mobile-cta{background:var(--accent);color:#0b0b0b;text-align:center;margin-top:5px}
+@media(max-width:850px){
+  .links{display:none}.menu{display:flex}
+  .hero-card{min-height:540px}
+  .hero-card > div[style]{top:82px!important;left:24px!important;right:24px!important;max-width:none!important}
+  .hero-card > div[style] > div{font-size:clamp(38px,9vw,52px)!important}
+  .statbox{left:18px;right:18px;bottom:18px}
+  .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .stat{text-align:center;min-width:0}.stat strong{font-size:27px}.stat small{font-size:10px;line-height:1.2}
+  .plans{grid-template-columns:1fr}
+  .plan.featured{transform:none}
+  .card,.plan{min-width:0}
+  .btn{width:100%;text-align:center}
+  .actions .btn{width:auto}
+}
+@media(max-width:600px){
+  .container{width:min(calc(100% - 28px),var(--max))}
+  .hero{padding-top:105px}
+  .hero-card{min-height:590px;padding:20px}
+  .hero-card > div[style]{top:70px!important;left:20px!important;right:20px!important}
+  .hero-card > div[style] > div{font-size:clamp(36px,11vw,48px)!important;line-height:.9}
+  .statbox{left:12px;right:12px;bottom:12px;padding:13px}
+  .statrow{grid-template-columns:1fr;gap:8px}
+  .stat{text-align:left;display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .stat strong{font-size:24px}.stat small{font-size:11px}
+  .actions{display:grid;grid-template-columns:1fr;gap:10px}.actions .btn{width:100%}
+  .fields{grid-template-columns:1fr}
+  .contact-links{grid-template-columns:1fr}
+  .contact-links .card{min-height:auto}
+  .section-head{align-items:start}
+  .section-head p{max-width:none}
+  h2{font-size:clamp(42px,14vw,58px)}
+  .price{font-size:48px}
+}
+@media(min-width:851px){.mobile-menu{display:none!important}}
+
+</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
 .contact-details{display:grid;gap:14px;margin-top:24px}
@@ -124,32 +204,106 @@
 .contact-item a{color:#f2eee6;text-decoration:none}
 .contact-item a:hover{color:#c6a15b}
 .form-note{display:block;color:#8f8b83;font-size:12px;line-height:1.5;margin-top:7px}
+.contact-links a{transition:.25s}.contact-links a:hover{color:var(--text)}.contact-links a:hover h3{color:var(--accent)}
 </style>
+
+<style>
+/* Live responsive fixes */
+.plans{grid-template-columns:repeat(3,minmax(0,1fr))}
+.plan{min-width:0}
+.plan .btn{width:100%}
+.contact-links a{display:block}
+@media(max-width:1050px){
+  .links{gap:15px;font-size:13px}
+  .hero-grid{gap:40px}
+}
+@media(max-width:850px){
+  .menu{display:block;position:relative;z-index:40;cursor:pointer}
+  .links{
+    display:none;position:absolute;top:68px;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:3px;padding:14px;
+    background:rgba(11,11,11,.98);border-bottom:1px solid rgba(198,161,91,.2);
+    box-shadow:0 18px 35px rgba(0,0,0,.4)
+  }
+  .links.open{display:flex}
+  .links a{padding:13px 12px}
+  .links .btn{width:100%;margin-top:5px}
+  .hero-grid,.split{grid-template-columns:1fr}
+  .plans,.cards{grid-template-columns:1fr}
+  .plan.featured{transform:none}
+}
+@media(max-width:520px){
+  .container{width:min(calc(100% - 24px),var(--max))}
+  .hero{padding:106px 0 54px;min-height:auto}
+  .hero-card{min-height:520px;padding:20px}
+  .hero-card > div[style]{
+    top:66px!important;left:20px!important;right:20px!important;max-width:none!important
+  }
+  .hero-card > div[style] > div{font-size:34px!important;line-height:1.04!important}
+  .statbox{left:14px;right:14px;bottom:14px;padding:15px}
+  .statrow{display:grid;grid-template-columns:1fr;gap:9px}
+  .stat strong{font-size:24px}
+  .stat small{font-size:10px}
+  .actions{display:grid;grid-template-columns:1fr}
+  .actions .btn,.btn{width:100%;min-height:50px}
+  .fields{grid-template-columns:1fr}
+  .price{font-size:46px}
+}
+</style>
+
+
+<style>
+/* Cleaner live layout */
+section{padding:78px 0}
+.section-head{margin-bottom:34px}
+.card,.plan{padding:26px}
+.card{min-height:220px}
+.plans{gap:18px}
+.plan ul{margin:17px 0 24px;gap:8px}
+.plan.featured{transform:translateY(-5px)}
+#connect .card{min-height:190px}
+@media(max-width:850px){
+  section{padding:60px 0}
+  .section-head{margin-bottom:25px}
+  .plan.featured{transform:none}
+}
+@media(max-width:520px){
+  section{padding:52px 0}
+  .card,.plan{padding:21px}
+  .card{min-height:auto}
+  .section-head{margin-bottom:22px}
+  .plan ul{margin:15px 0 21px}
+}
+</style>
+
 </head>
 <body>
 <header class="nav">
   <div class="container nav-inner">
     <a class="logo" href="#top">BUILT <span>BY</span> ALFIE</a>
-    <nav class="links">
-      <a href="#coaching">Coaching</a><a href="#approach">Approach</a><a href="#plans">Plans</a><a href="#about">About</a><a class="btn" href="#contact">Start Coaching</a>
+    <nav class="links" id="siteLinks">
+      <a href="#coaching">Coaching</a><a href="#nutrition">Nutrition</a><a href="#approach">Approach</a><a href="#plans">Plans</a><a href="#about">About</a><a href="#connect">Connect</a><a class="btn" href="#contact">Start Coaching</a>
     </nav>
-    <button class="menu" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+    <button class="menu" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
   </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+    <a href="#coaching">Coaching</a><a href="#nutrition">Nutrition</a><a href="#approach">Approach</a><a href="#plans">Plans</a><a href="#about">About</a><a href="#connect">Connect</a><a class="mobile-cta" href="#contact">Start Coaching</a>
+  </nav>
 </header>
 
 <main id="top">
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow">1-to-1 Training • Performance • Online Coaching</div>
-      <h1>GET <span>BUILT.</span><br>GET BETTER.</h1>
-      <p>Personalised coaching for people who want to get stronger, move better and perform at their best — online or in person.</p>
+      <div class="eyebrow">Bespoke Fitness • Nutrition • Performance</div>
+      <h1>BUILT <span>AROUND</span><br>YOU.</h1>
+      <p>No template. No shortcuts. Bespoke training, nutrition and coaching built around your goals, lifestyle and the way you want to progress.</p>
       <div class="actions"><a class="btn" href="#contact">Book a Consultation →</a><a class="btn dark" href="#coaching">Explore Coaching</a></div>
     </div>
     <div class="hero-card">
       <div class="eyebrow">BUILT BY ALFIE</div>
       <div style="position:absolute;top:90px;left:24px;max-width:300px">
-        <div style="font-family:'Barlow Condensed';font-size:44px;text-transform:uppercase">Your plan.<br>Your progress.<br>Your potential.</div>
+        <div style="font-family:'Barlow Condensed';font-size:44px;text-transform:uppercase">ASSESS.<br>BUILD.<br>TRACK.<br>ADJUST.</div>
       </div>
       <div class="statbox"><div class="statrow"><div class="stat"><strong>1:1</strong><small>Personal coaching</small></div><div class="stat"><strong>ONLINE</strong><small>Coach from anywhere</small></div><div class="stat"><strong>IN PERSON</strong><small>Hands-on support</small></div></div></div>
     </div>
@@ -158,11 +312,29 @@
 
 <section id="coaching">
   <div class="container">
-    <div class="section-head"><div><div class="eyebrow">What I coach</div><h2>COACHING<br>THAT FITS YOU.</h2></div><p>No copy-and-paste plans. Your training, nutrition and support are built around your goals, lifestyle, sport and starting point.</p></div>
+    <div class="section-head"><div><div class="eyebrow">What I coach</div><h2>NO TEMPLATE.<br>NO SHORTCUTS.</h2></div><p>Training and nutrition built around your goals, lifestyle and starting point — with a clear structure for progress.</p></div>
     <div class="cards">
       <article class="card"><div class="num">01</div><h3>1-to-1 Training</h3><p>Focused face-to-face sessions in Frimley / Camberley. Train with purpose and work on strength, fitness, movement and performance.</p></article>
       <article class="card"><div class="num">02</div><h3>Performance</h3><p>Build strength, conditioning, speed, movement and confidence for your sport or your own performance goals.</p></article>
-      <article class="card"><div class="num">03</div><h3>Online Coaching</h3><p>Flexible coaching and accountability for people who want support around their schedule, with the option to pre-book face-to-face sessions.</p></article>
+      <article class="card"><div class="num">03</div><h3>Nutrition</h3><p>No weekly meal-plan template. Nutrition is calculated around your height, weight, age, activity and training demands, using energy balance to establish a practical calorie target, then setting protein, carbohydrate, fat and fibre targets with micronutrient coverage in mind.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="nutrition">
+  <div class="container split">
+    <div>
+      <div class="eyebrow">The nutrition approach</div>
+      <h2>NUTRITION<br>BY NUMBERS.</h2>
+    </div>
+    <div>
+      <p>No generic meal plans. Your calorie and nutrition targets are set from your bodyweight, height, age, activity and training demands.</p>
+      <div class="features">
+        <div class="feature"><span class="check">01</span><div><strong>Energy balance</strong><br>Calorie intake is structured around energy expenditure. For fat loss, the objective is a sustainable energy deficit — grounded in the basic thermodynamics of energy balance.</div></div>
+        <div class="feature"><span class="check">02</span><div><strong>Macro targets</strong><br>Protein, carbohydrates and fats are allocated to support the goal, training performance, recovery and adherence.</div></div>
+        <div class="feature"><span class="check">03</span><div><strong>Fibre & micronutrients</strong><br>Food choices are structured to support fibre intake and broad micronutrient coverage rather than relying on restrictive food lists.</div></div>
+        <div class="feature"><span class="check">04</span><div><strong>Adjust as you progress</strong><br>Targets can be refined using changes in bodyweight, performance, recovery and adherence rather than forcing a fixed plan indefinitely.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -180,9 +352,44 @@
   <div class="container">
     <div class="section-head"><div><div class="eyebrow">Simple coaching options</div><h2>TRAIN<br>YOUR WAY.</h2></div><p>Choose flexible online coaching or pre-book your 1-to-1 sessions throughout the month. Session arrangements can be tailored to you.</p></div>
     <div class="plans">
-      <article class="plan"><h3>Online</h3><div class="price">£100<small style="font:14px Inter;color:var(--muted)"> / month</small></div><ul><li>Flexible online coaching</li><li>Training guidance and accountability</li><li>Regular check-ins</li><li>Progress tracking</li><li>Option to pre-book 1-to-1 sessions</li></ul><a class="btn dark" href="#contact">Enquire</a></article>
-      <article class="plan featured"><div class="eyebrow">Flexible booking</div><h3>1-to-1</h3><div class="price">£25<small style="font:14px Inter;color:var(--muted)"> / session</small></div><ul><li>Face-to-face training</li><li>Performance-focused sessions</li><li>Pre-book sessions throughout the month</li><li>Choose a frequency that suits you</li><li>Pricing can vary for different booking arrangements</li></ul><a class="btn" href="#contact">Book Enquiry</a></article>
-      <article class="plan"><h3>3 Month</h3><div class="price">£270<small style="font:14px Inter;color:var(--muted)"> / 3 months</small></div><ul><li>Online coaching for 3 months</li><li>10% saving vs monthly</li><li>Consistent accountability</li><li>Progress-focused coaching</li><li>Optional pre-booked 1-to-1 sessions</li></ul><a class="btn dark" href="#contact">Start 3 Months</a></article>
+      <article class="plan">
+        <div class="eyebrow">Online coaching</div>
+        <h3>Monthly</h3>
+        <div class="price">£80<small style="font:14px Inter;color:var(--muted)"> / month</small></div>
+        <ul>
+          <li>Tailored training plan</li>
+          <li>Personalised calorie & nutrition targets</li>
+          <li>Protein, carbs, fats, fibre & micronutrient guidance</li>
+          <li>Progress tracking & adjustments</li>
+        </ul>
+        <a class="btn dark" href="#contact">Enquire</a>
+      </article>
+
+      <article class="plan featured">
+        <div class="eyebrow">10% prepaid saving</div>
+        <h3>3 Month Online</h3>
+        <div class="price">£216<small style="font:14px Inter;color:var(--muted)"> / 3 months</small></div>
+        <ul>
+          <li>Everything in Online Monthly</li>
+          <li>3 months prepaid upfront</li>
+          <li>Tailored gym plans based on your goals</li>
+          <li>Nutrition targets reviewed as you progress</li>
+        </ul>
+        <a class="btn" href="#contact">Enquire</a>
+      </article>
+
+      <article class="plan">
+        <div class="eyebrow">Face-to-face</div>
+        <h3>1-to-1</h3>
+        <div class="price">£25<small style="font:14px Inter;color:var(--muted)"> / session</small></div>
+        <ul>
+          <li>Personal 1-to-1 training</li>
+          <li>10% off 4+ prepaid sessions in one month</li>
+          <li>Discounted rate: £22.50 per session</li>
+          <li>Missed pre-booked sessions remain payable</li>
+        </ul>
+        <a class="btn dark" href="#contact">Book Enquiry</a>
+      </article>
     </div>
   </div>
 </section>
@@ -191,6 +398,27 @@
   <div class="container split">
     <div><div class="eyebrow">Meet your coach</div><h2>BUILT BY<br>ALFIE.</h2><p style="color:var(--muted);margin-top:22px">I believe good coaching should make you more confident, capable and consistent — not overwhelmed. Built by Alfie focuses on high-quality face-to-face training, performance and flexible online coaching.</p><a class="btn" href="#contact" style="margin-top:25px">Work With Me</a></div>
     <div class="testimonial"><p>“Your programme should fit your life — not force your life to fit your programme.”</p><small>— ALFIE, COACH</small></div>
+  </div>
+</section>
+
+
+<section id="connect">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Connect directly</div><h2>FIND<br>BUILT BY ALFIE.</h2></div>
+      <p>Choose how you want to get in touch. Follow the coaching journey or contact me directly about working together.</p>
+    </div>
+    <div class="cards contact-links">
+      <a class="card" href="https://www.instagram.com/builtby_alfie?stkn=Y25uZWlkdHV4ZGdt&amp;utm_source=qr" target="_blank" rel="noopener">
+        <div class="num">01</div><h3>Instagram</h3><p>Follow Built by Alfie for training, nutrition, progress and coaching content.</p>
+      </a>
+      <a class="card" href="https://wa.me/message/JLFDW5WK6VPQH1" target="_blank" rel="noopener">
+        <div class="num">02</div><h3>WhatsApp</h3><p>Message directly to ask about coaching, plans or availability.</p><p style="margin-top:12px;color:var(--accent)">+44 7522 196025</p>
+      </a>
+      <a class="card" href="mailto:built_by_alfie@proton.me">
+        <div class="num">03</div><h3>Email</h3><p>Send an enquiry directly by email for coaching and business enquiries.</p><p style="margin-top:12px;color:var(--accent)">built_by_alfie@proton.me</p>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -203,25 +431,54 @@
       <div class="fields"><input class="input" name="name" placeholder="Your name" required><input class="input" name="email" type="email" placeholder="Email address" required></div>
       <select class="input" name="service" required><option value="">What are you interested in?</option><option>Online coaching</option><option>In-person fitness coaching</option><option>Performance coaching</option><option>Not sure yet</option></select>
       <textarea class="input" name="message" placeholder="Tell me about your goal..." required></textarea>
-      <div class="field">
-<label for="contact_method">How would you like to send your enquiry?</label>
-<select id="contact_method" name="contact_method">
-<option value="whatsapp">WhatsApp</option>
-<option value="email">Email</option>
-<option value="both">WhatsApp + Email</option>
-</select>
-<small class="form-note">For WhatsApp + Email, both will open ready to send.</small>
-</div>
-<button class="btn" type="submit">Send Enquiry →</button>
-      <div class="form-note" id="formNote">Demo form: connect this to your email/form provider before publishing.</div>
+      <button class="btn" type="submit">Send Enquiry →</button>
+      <div class="contact-details">
+        <div class="contact-item"><div class="contact-icon"><i class="fa-solid fa-envelope"></i></div><div><small>Email</small><a href="mailto:built_by_alfie@proton.me">built_by_alfie@proton.me</a></div></div>
+        <div class="contact-item"><div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div><div><small>WhatsApp Business</small><a href="https://wa.me/message/JLFDW5WK6VPQH1" target="_blank" rel="noopener">+44 7522 196025</a></div></div>
+      </div>
     </form>
   </div>
 </section>
 </main>
 
-<footer><div class="container footer-inner"><div>© <span id="year"></span> Built by Alfie. All rights reserved.</div><div>1-to-1 Training • Performance • Online Coaching</div></div></footer>
+<footer><div class="container footer-inner"><div>© <span id="year"></span> Built by Alfie. All rights reserved.</div><div>Fitness • Nutrition • Performance Coaching</div></div></footer>
 
 
 
+<script>
+(() => {
+  const button = document.getElementById('menuButton');
+  const menu = document.getElementById('mobileMenu');
+  if (!button || !menu) return;
+  const closeMenu = () => { menu.classList.remove('open'); button.setAttribute('aria-expanded','false'); button.setAttribute('aria-label','Open menu'); button.textContent='☰'; };
+  button.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    button.textContent = open ? '×' : '☰';
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('click', e => { if (!menu.contains(e.target) && !button.contains(e.target)) closeMenu(); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 850) closeMenu(); });
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+
+<script>
+function toggleMenu(){
+  const links=document.getElementById('siteLinks');
+  if(links) links.classList.toggle('open');
+}
+document.addEventListener('DOMContentLoaded',function(){
+  const year=document.getElementById('year');
+  if(year) year.textContent=new Date().getFullYear();
+  const links=document.getElementById('siteLinks');
+  if(links){
+    links.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){links.classList.remove('open');});
+    });
+  }
+});
+</script>
 </body>
 </html>
